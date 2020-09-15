@@ -56,16 +56,48 @@
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
 
+    .clock::after {
+    /* adds a pseudo element we can style */
+    content: ""; 
+    position: absolute;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.692);
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
     .hand {
-      width: 50%;
-      height: 6px;
-      background: black;
       position: absolute;
-      top: 50%;
-      transform-origin: 100%;
-      transform: rotate(90deg);
-      transition: all 0.05s;
-      transition-timing-function: cubic-bezier(0.1, 2.7. 0.58, 1);
+      bottom: 50%;
+      left: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.692);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transform-origin: bottom;
+      z-index: 10;
+    }
+
+    .second-hand {
+      width: 4px;
+      height: 45%;
+      background-color: white;
+    }
+
+    .min-hand {
+      width: 7px;
+      height: 40%;
+      background-color: black;
+    }
+
+    .hour-hand {
+      width: 10px;
+      height: 25%;
+      background-color: black;
     }
 
   </style>
